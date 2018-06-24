@@ -1,0 +1,6 @@
+D:\Programming\C# Projects\Bank Application\Bank\Bank\obj\Debug\Bank.csprojAssemblyReference.cache
+D:\Programming\C# Projects\Bank Application\Bank\Bank\obj\Debug\UI\Login.g.cs
+D:\Programming\C# Projects\Bank Application\Bank\Bank\obj\Debug\UI\CreateNewAccount.g.cs
+D:\Programming\C# Projects\Bank Application\Bank\Bank\obj\Debug\App.g.cs
+D:\Programming\C# Projects\Bank Application\Bank\Bank\obj\Debug\Bank_MarkupCompile.cache
+D:\Programming\C# Projects\Bank Application\Bank\Bank\obj\Debug\Bank_MarkupCompile.lref

@@ -1,0 +1,32 @@
+﻿<Window x:Class="Bank.UI.CreateNewAccount"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bank.UI"
+        mc:Ignorable="d"
+         Title="Create a New Account" Height="466.386" Width="517.648">
+    <Grid>
+        <Label x:Name="lblFirstName" Content="First Name" HorizontalAlignment="Left" Margin="10,43,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.276,-0.288"/>
+        <Label x:Name="lblMiddle" Content="Middle" HorizontalAlignment="Left" Margin="10,74,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.276,-0.288"/>
+        <Label x:Name="lblLastName_Copy" Content="Last Name" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.276,-0.288"/>
+        <Label x:Name="lblPhone" Content="Phone" HorizontalAlignment="Left" Margin="10,133,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.276,-0.288"/>
+        <Label x:Name="lblGender" Content="Gender" HorizontalAlignment="Left" Margin="10,161,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.276,-0.288"/>
+        <Label x:Name="lblDateOfBirth" Content="Date Of Birth&#xD;&#xA;" HorizontalAlignment="Left" Margin="10,187,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.276,-0.288" Height="25"/>
+        <Label x:Name="lblUsername" Content="Username" HorizontalAlignment="Left" Margin="274,43,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.276,-0.288"/>
+        <Label x:Name="lblPasswordConfirm" Content="Confirm" HorizontalAlignment="Left" Margin="274,109,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.276,-0.288"/>
+        <Label x:Name="lblPassword" Content="Password" HorizontalAlignment="Left" Margin="274,81,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.276,-0.288"/>
+        <Label x:Name="lblSocialSecurity" Content="Last 4 Digits of Social" HorizontalAlignment="Left" Margin="274,161,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.276,-0.288"/>
+        <TextBox x:Name="txtFirstName" HorizontalAlignment="Left" Height="23" Margin="102,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146"/>
+        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="23" Margin="102,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146"/>
+        <TextBox x:Name="txtMiddle" HorizontalAlignment="Left" Height="23" Margin="102,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" Text="Optional"/>
+        <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Height="23" Margin="102,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146"/>
+        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="23" Margin="337,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163"/>
+        <TextBox x:Name="txtPasswordConfirm" HorizontalAlignment="Left" Height="23" Margin="337,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163"/>
+        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="23" Margin="337,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163"/>
+        <TextBox x:Name="txtSocialSecurity" HorizontalAlignment="Left" Height="23" Margin="402,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="98"/>
+        <ComboBox x:Name="comboGender" HorizontalAlignment="Left" VerticalAlignment="Top" Width="146" Margin="102,161,0,0" SelectionChanged="comboGender_SelectionChanged"/>
+        <DatePicker x:Name="dateDateOfBirth" HorizontalAlignment="Left" Margin="101,188,0,0" VerticalAlignment="Top" Width="146"/>
+        <Button Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="337,219,0,0" Click="SaveNewAccount"/>
+    </Grid>
+</Window>
