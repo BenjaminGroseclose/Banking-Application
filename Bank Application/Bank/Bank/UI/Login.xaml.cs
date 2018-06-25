@@ -24,5 +24,15 @@ namespace Bank
         {
             InitializeComponent();
         }
+
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnNewAccount_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
