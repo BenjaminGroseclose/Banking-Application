@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Programming\C# Projects\Bank Application\Bank\Bank\obj\Debug\
+D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\obj\Debug\
 Bank
 none
 false
 DEBUG;TRACE
-D:\Programming\C# Projects\Bank Application\Bank\Bank\App.xaml
-2-387822135
+D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\App.xaml
+4-672974690
+21565544830
+162096494612
+14-799888181
+UI\Login.xaml;UI\CreateNewAccount.xaml;UI\MainWindow.xaml;UI\Pages\SideNavPage.xaml;
 
-131872190676
-131569487696
-UI\Login.xaml;UI\CreateNewAccount.xaml;
-
-False
+True
 
