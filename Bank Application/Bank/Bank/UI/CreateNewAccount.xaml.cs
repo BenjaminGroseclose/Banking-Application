@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-using Bank_Application.Banking;
 using Bank_Application.Objects;
 
 namespace Bank_Application.UI
@@ -33,7 +32,7 @@ namespace Bank_Application.UI
         {
             if (ValidateInput())
             {
-                AccountCreation accountCreation = new AccountCreation();
+                //AccountCreation accountCreation = new AccountCreation();
                 Customer customer = new Customer();
                 Account account = new Account();
 
@@ -54,11 +53,10 @@ namespace Bank_Application.UI
         }
 
         private bool ValidateInput()
-        {
+        {            
             if (txtFirstName.Text == null) fields.Add("txtFirstName");
             if (txtLastName.Text == null) fields.Add("txtLastName");
             if (txtPhone.Text == null) fields.Add("txtPhone");
-            // if (comboGender.Text == null) fields.Add("comboGender");
             if (dateDateOfBirth.Text == null) fields.Add("dateDateOfBirth");
             if (txtUsername.Text == null) fields.Add("txtUsername");
             if (txtPassword.Text == null) fields.Add("txtPassword");

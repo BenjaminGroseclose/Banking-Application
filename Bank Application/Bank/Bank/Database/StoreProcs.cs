@@ -1,36 +1,43 @@
-﻿using System.Data;
+﻿using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
-using System.Configuration;
-using System;
-using System.Windows;
+
 using Bank_Application.Objects;
 
 namespace Bank_Application.Database
 {
     class StoredProcs
     {
+        
+
         public string GetConnectionString()
         {
-            //   return ConfigurationManager.ConnectionStrings["BankDatabase"].ConnectionString;
-            return "";
+            return ConfigurationManager.ConnectionStrings["BankDatabase"].ConnectionString;
         }
 
         internal bool LoginAuth(string username, string password)
         {
+            string _correctPassword;
             using (SqlConnection connection = new SqlConnection(GetConnectionString()))
+            using (SqlCommand command = new SqlCommand("SELECT Password FROM Account WHERE Username ='"+username+"'" , connection))
             {
-                SqlCommand command = new SqlCommand("Get_LoginPassword");
-                SqlDataReader dr;
-                command.CommandType = CommandType.StoredProcedure;
-                SqlParameter parameter = new SqlParameter("@username", username);
+                
+                command.CommandType = CommandType.Text;
+                command.Parameters.AddWithValue("@username", username);
+
                 connection.Open();
-
-                dr = command.ExecuteReader();
-
-                while (dr.Read())
+                SqlDataReader dr = command.ExecuteReader();
+                if(dr.Read())
                 {
-                    MessageBox.Show(dr.GetString(0));
+                    _correctPassword = dr.GetString(0);
                 }
+                else
+                    return false;
+
+                connection.Close();
+
+                if (_correctPassword == password)
+                    return true;
 
             }
 
@@ -39,12 +46,12 @@ namespace Bank_Application.Database
 
         internal bool CreateAccount(Account account)
         {
-            throw new NotImplementedException();
+            return false;
         }
 
         internal bool CreateCustomer(Customer customer)
         {
-            throw new NotImplementedException();
+            return false;
         }
     }
 }

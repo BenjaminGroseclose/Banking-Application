@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using Bank_Application.Database;
+
 namespace Bank
 {
     /// <summary>
@@ -20,9 +22,39 @@ namespace Bank
     /// </summary>
     public partial class MainWindow : Window
     {
+        StoredProcs storedProcs = new StoredProcs();
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void clickLogin(object sender, RoutedEventArgs e)
+        {
+            if(ValidateLogin())
+            {
+                if (storedProcs.LoginAuth(txtUsername.Text, txtPassword.Text))
+                    // Access Granted Go to Main Window. 
+                else
+                    MessageBox.Show("Incorrect Username or Password", "You username or password were incorrect please try again.");
+            }
+
+        }
+
+        private void clickCreateNewAccount(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private bool ValidateLogin()
+        {
+            if (txtUsername.Text == "" || txtPassword.Text == "")
+            {
+                MessageBox.Show("Incorrect Input", "Please enter both your Username and Password");
+                return false;
+            }
+                
+            return true;
         }
     }
 }
