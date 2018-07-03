@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\App.xaml
-2-387822135
+4-672974690
 21565544830
-1010057666
+162096494612
 14-799888181
-UI\Login.xaml;UI\CreateNewAccount.xaml;
+UI\Login.xaml;UI\CreateNewAccount.xaml;UI\MainWindow.xaml;UI\Pages\SideNavPage.xaml;
 
-False
+True
 
