@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bank.UI.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,8 @@ namespace Bank.UI
         public MainWindow()
         {
             InitializeComponent();
+            SideNavPage sideNav = new SideNavPage();
+            sideNav.Visibility = Visibility.Visible;
         }
     }
 }

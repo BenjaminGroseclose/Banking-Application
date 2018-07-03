@@ -25,26 +25,8 @@ namespace Bank.Objects
         {
             var customer = new Customer();
 
-            // return a customer from the database when given the CustomerPK
-
             return customer;
         }
-
-        //public void createCustomer(string Firstname,
-        //                           string LastName,
-        //                           char Gender,
-        //                           DateTime DOB,
-        //                           string Phone,
-        //                           string Middle = "")
-        //{
-
-        //    using (SqlConnection connection = new SqlConnection(
-        //        ConfigurationManager.ConnectionStrings["BankDatabase"].ConnectionString))
-        //    using (SqlCommand command = new SqlCommand())
-        //    {
-
-        //    }
-        //}
 
     }
 }

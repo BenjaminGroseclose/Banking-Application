@@ -9,9 +9,10 @@
         <Label x:Name="lblUsername" Content="Username" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="144,130,0,0"/>
         <Label x:Name="lblPassword" Content="Password" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="144,161,0,0"/>
         <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="23" Margin="212,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.308,1.217"/>
-        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="212,165,0,0"/>
+        <PasswordBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="120" Margin="212,165,0,0" Name="txtPassword"/>
         <Button x:Name="btnLogin" Content="Login" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="212,205,0,0" Click="clickLogin"/>
         <Button x:Name="btnNewAccount" Content="Create New Account" HorizontalAlignment="Left" VerticalAlignment="Top" Width="133" Margin="185,230,0,0" Click="clickCreateNewAccount"/>
+        
 
     </Grid>
 </Window>

@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-using Bank_Application.Database;
+using Bank.Database;
 
 namespace Bank.UI
 {
@@ -34,7 +34,7 @@ namespace Bank.UI
             MainWindow mainWindow = new MainWindow();
             if(ValidateLogin())
             {
-                if (storedProcs.LoginAuth(txtUsername.Text, txtPassword.Text))
+                if (storedProcs.LoginAuth(txtUsername.Text, txtPassword.Password))
                 {
                     mainWindow.Show();
                     this.Close();
@@ -54,7 +54,7 @@ namespace Bank.UI
 
         private bool ValidateLogin()
         {
-            if (txtUsername.Text == "" || txtPassword.Text == "")
+            if (txtUsername.Text == "" || txtPassword.Password == "")
             {
                 MessageBox.Show("Please enter both your Username and Password", "Incorrect Input");
                 return false;

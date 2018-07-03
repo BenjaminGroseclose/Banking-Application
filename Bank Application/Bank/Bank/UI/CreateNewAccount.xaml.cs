@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-using Bank_Application.Objects;
+using Bank.Objects;
 
 
 namespace Bank.UI

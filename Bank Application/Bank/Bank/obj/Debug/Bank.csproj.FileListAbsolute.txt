@@ -15,8 +15,6 @@ D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\obj\De
 D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\obj\Debug\Bank.Properties.Resources.resources
 D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\obj\Debug\Bank.csproj.GenerateResource.cache
 D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\obj\Debug\Bank.csproj.CoreCompileInputs.cache
-D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\bin\Debug\Database\Bank.mdf
-D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\bin\Debug\Database\Bank_log.ldf
 D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\bin\Debug\Bank.exe.config
 D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\bin\Debug\Bank.exe
 D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\bin\Debug\Bank.pdb
@@ -27,3 +25,5 @@ D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\obj\De
 D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\obj\Debug\Bank_MarkupCompile.lref
 D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\obj\Debug\UI\MainWindow.baml
 D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\obj\Debug\UI\Pages\SideNavPage.baml
+D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\bin\Debug\Database\DataSet\Bank.mdf
+D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\bin\Debug\Database\DataSet\Bank_log.ldf
