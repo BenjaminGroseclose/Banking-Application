@@ -70,12 +70,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Database\BankDataSet.Designer.cs">
+    <Compile Include="Database\ClientInfo.cs" />
+    <Compile Include="Database\DataConnection.cs" />
+    <Compile Include="Database\DataSet\BankDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BankDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Database\StoreProcs.cs" />
+    <Compile Include="Database\StoredProcs.cs" />
     <Compile Include="Objects\Account.cs" />
     <Compile Include="Objects\Customer.cs" />
     <Compile Include="UI\CreateNewAccount.xaml.cs">
@@ -130,15 +132,15 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Database\BankDataSet.xsc">
+    <None Include="Database\DataSet\BankDataSet.xsc">
       <DependentUpon>BankDataSet.xsd</DependentUpon>
     </None>
-    <None Include="Database\BankDataSet.xsd">
+    <None Include="Database\DataSet\BankDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>BankDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="Database\BankDataSet.xss">
+    <None Include="Database\DataSet\BankDataSet.xss">
       <DependentUpon>BankDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
@@ -150,10 +152,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database\Bank.mdf">
+    <Content Include="Database\DataSet\Bank.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Database\Bank_log.ldf">
+    <Content Include="Database\DataSet\Bank_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Bank.mdf</DependentUpon>
     </Content>

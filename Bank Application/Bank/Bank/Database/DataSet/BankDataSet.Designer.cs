@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace Bank.Database {
+namespace Bank.Database.DataSet {
     
     
     /// <summary>
@@ -1363,7 +1363,7 @@ namespace Bank.Database {
         }
     }
 }
-namespace Bank.Database.BankDataSetTableAdapters {
+namespace Bank.Database.DataSet.BankDataSetTableAdapters {
     
     
     /// <summary>

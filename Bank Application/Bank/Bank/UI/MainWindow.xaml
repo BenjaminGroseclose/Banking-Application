@@ -12,8 +12,8 @@
             <ColumnDefinition Width="580*"/>
             <ColumnDefinition Width="13*"/>
         </Grid.ColumnDefinitions>
-        <TabItem Margin="0,0,643,0">
-            <Frame Source="MyPage.xaml" />
+        <TabItem Margin="0,0,625,0">
+            <Frame Source="Pages/SideNavPage.xaml" />
         </TabItem>
     </Grid>
 

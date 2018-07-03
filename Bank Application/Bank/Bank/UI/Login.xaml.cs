@@ -15,42 +15,48 @@ using System.Windows.Shapes;
 
 using Bank_Application.Database;
 
-namespace Bank
+namespace Bank.UI
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Login : Window
     {
         StoredProcs storedProcs = new StoredProcs();
 
-        public MainWindow()
+        public Login()
         {
             InitializeComponent();
         }
 
         private void clickLogin(object sender, RoutedEventArgs e)
         {
+            MainWindow mainWindow = new MainWindow();
             if(ValidateLogin())
             {
                 if (storedProcs.LoginAuth(txtUsername.Text, txtPassword.Text))
-                    // Access Granted Go to Main Window. 
+                {
+                    mainWindow.Show();
+                    this.Close();
+                }
                 else
-                    MessageBox.Show("Incorrect Username or Password", "You username or password were incorrect please try again.");
+                    MessageBox.Show("You username or password were incorrect please try again.", "Incorrect Username or Password");
             }
 
         }
 
         private void clickCreateNewAccount(object sender, RoutedEventArgs e)
         {
-
+            CreateNewAccount createNewAccount = new CreateNewAccount();
+            createNewAccount.Show();
+            this.Close();
         }
 
         private bool ValidateLogin()
         {
             if (txtUsername.Text == "" || txtPassword.Text == "")
             {
-                MessageBox.Show("Incorrect Input", "Please enter both your Username and Password");
+                MessageBox.Show("Please enter both your Username and Password", "Incorrect Input");
                 return false;
             }
                 

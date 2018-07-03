@@ -22,4 +22,8 @@ D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\bin\De
 D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\bin\Debug\Bank.pdb
 D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\obj\Debug\Bank.exe
 D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\obj\Debug\Bank.pdb
-D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\obj\Debug\Bank.csprojAssemblyReference.cache
+D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\obj\Debug\UI\MainWindow.g.cs
+D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\obj\Debug\UI\Pages\SideNavPage.g.cs
+D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\obj\Debug\Bank_MarkupCompile.lref
+D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\obj\Debug\UI\MainWindow.baml
+D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\obj\Debug\UI\Pages\SideNavPage.baml

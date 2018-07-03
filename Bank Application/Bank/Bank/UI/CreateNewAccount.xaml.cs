@@ -14,7 +14,8 @@ using System.Windows.Shapes;
 
 using Bank_Application.Objects;
 
-namespace Bank_Application.UI
+
+namespace Bank.UI
 {
     /// <summary>
     /// Interaction logic for CreateNewAccount.xaml
@@ -26,6 +27,13 @@ namespace Bank_Application.UI
         public CreateNewAccount()
         {
             InitializeComponent();
+        }
+
+        private void CancelNewAccount(object sender, RoutedEventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Close();
         }
 
         private void SaveNewAccount(object sender, RoutedEventArgs e)
