@@ -2,37 +2,31 @@
 using System.Data;
 using System.Data.SqlClient;
 
-using Bank.Database;
 using Bank.Objects;
 
 namespace Bank.Database
 {
-    class StoredProcs : DataConnection
+    public class StoredProcs : DataConnection
     {
 
-        internal bool LoginAuth(string username, string password)
+        public bool LoginAuth(string username, string password)
         {
             string _correctPassword;
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand("SELECT Password FROM Account WHERE Username ='"+username+"'" , connection))
+            using (SqlConnection connection = new SqlConnection(SqlConnection().ToString()))
+            using (SqlCommand command = new SqlCommand("ValidateLogin" , connection))
             {
-                
-                command.CommandType = CommandType.Text;
-                command.Parameters.AddWithValue("@username", username);
-
                 connection.Open();
-                SqlDataReader dr = command.ExecuteReader();
-                if(dr.Read())
-                {
-                    _correctPassword = dr.GetString(0);
-                }
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@username", username);
+                SqlParameter retval = command.Parameters.Add("@password", SqlDbType.VarChar, 50);
+                retval.Direction = ParameterDirection.Output;
+
+                command.ExecuteNonQuery();
+                _correctPassword = command.Parameters["@password"].Value.ToString();
+                if (password == _correctPassword)
+                    return true;
                 else
                     return false;
-
-                connection.Close();
-
-                if (_correctPassword == password)
-                    return true;
 
             }
 

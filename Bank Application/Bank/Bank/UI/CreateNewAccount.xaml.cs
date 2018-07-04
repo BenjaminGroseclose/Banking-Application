@@ -23,6 +23,7 @@ namespace Bank.UI
     public partial class CreateNewAccount : Window
     {
         private List<String> fields;
+        private string fieldString = "";
 
         public CreateNewAccount()
         {
@@ -40,55 +41,77 @@ namespace Bank.UI
         {
             if (ValidateInput())
             {
-                //AccountCreation accountCreation = new AccountCreation();
-                Customer customer = new Customer();
-                Account account = new Account();
+                if(MatchingPasswords())
+                {
+                    Customer customer = new Customer();
+                    Account account = new Account();
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect Input", "Confirm Password does not match Password.");
 
-                customer = NewCustomer();
-                account = NewAccount();
-
-                //if (accountCreation.UploadToDatabase(customer, account))
-                //    MessageBox.Show("Account Creation", customer.FirstName + " your Account has been created");
-                //else
-                //    MessageBox.Show("Account Creation", customer.FirstName + " we were not able to save your account to our Database, please try again");                
+                }
             }
             else
             {
-                MessageBox.Show("Incorrect Input", "Please Enter all the required fields");
-                InvalidInput();
+                foreach(var field in fields)
+                {
+                    ConcatFieldString(field);
+                }
+                MessageBox.Show("Incorrect Input", "Please Enter all the required fields" + fieldString);
 
             }
         }
 
+        private void ConcatFieldString(string field)
+        {
+            switch(field)
+            {
+                case "txtFirstName":
+                    fieldString = string.Concat(fieldString, "/nFirst Name");
+                    break;
+                case "txtLastName":
+                    fieldString = string.Concat(fieldString, "/nLast Name");
+                    break;
+                case "txtPhone":
+                    fieldString = string.Concat(fieldString, "/nPhone");
+                    break;
+                case "dateDateOfBirth":
+                    fieldString = string.Concat(fieldString, "/nDate of Birth");
+                    break;
+                case "txtUsername":
+                    fieldString = string.Concat(fieldString, "/nUsername");
+                    break;
+                case "txtPassword":
+                    fieldString = string.Concat(fieldString, "/nPassword");
+                    break;
+                case "txtPasswordConfirm":
+                    fieldString = string.Concat(fieldString, "/nConfirm Password");
+                    break;
+            }
+
+        }
+
         private bool ValidateInput()
         {            
-            if (txtFirstName.Text == null) fields.Add("txtFirstName");
-            if (txtLastName.Text == null) fields.Add("txtLastName");
-            if (txtPhone.Text == null) fields.Add("txtPhone");
-            if (dateDateOfBirth.Text == null) fields.Add("dateDateOfBirth");
-            if (txtUsername.Text == null) fields.Add("txtUsername");
-            if (txtPassword.Text == null) fields.Add("txtPassword");
-            if (txtPasswordConfirm.Text == null) fields.Add("txtPasswordConfirm");
+            if (txtFirstName.Text == "") fields.Insert(0, "txtFirstName");
+            if (txtLastName.Text == "") fields.Insert(0, "txtLastName");
+            if (txtPhone.Text == "") fields.Insert(0, "txtPhone");
+            if (dateDateOfBirth.Text == "") fields.Insert(0, "dateDateOfBirth");
+            if (txtUsername.Text == "") fields.Insert(0, "txtUsername");
+            if (txtPassword.Text == "") fields.Insert(0, "txtPassword");
+            if (txtPasswordConfirm.Text == "") fields.Insert(0, "txtPasswordConfirm");
 
             if (fields.Any())
                 return true;
             return false;
         }
 
-        private void InvalidInput()
+        private bool MatchingPasswords()
         {
-            /*
-            Looking into how to make the background of text boxes red. 
-            foreach (var field in fields)
-            {
-                switch (field)
-                {
-                    case "txtFirstName":
-                        txtFirstName;
-                            break;
-                }
-            }
-            */
+            if (txtPassword.Text == txtPasswordConfirm.Text)
+                return true;
+            return false;
         }
 
         private Customer NewCustomer()

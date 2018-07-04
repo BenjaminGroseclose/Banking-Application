@@ -72,11 +72,6 @@
     </ApplicationDefinition>
     <Compile Include="Database\ClientInfo.cs" />
     <Compile Include="Database\DataConnection.cs" />
-    <Compile Include="Database\DataSet\BankDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BankDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Database\StoredProcs.cs" />
     <Compile Include="Objects\Account.cs" />
     <Compile Include="Objects\Customer.cs" />
@@ -132,17 +127,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Database\DataSet\BankDataSet.xsc">
-      <DependentUpon>BankDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Database\DataSet\BankDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BankDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Database\DataSet\BankDataSet.xss">
-      <DependentUpon>BankDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -150,15 +134,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Database\DataSet\Bank.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Database\DataSet\Bank_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Bank.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">

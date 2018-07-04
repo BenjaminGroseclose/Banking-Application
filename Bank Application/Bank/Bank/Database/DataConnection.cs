@@ -1,14 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Configuration;
+using System.Data.SqlClient;
+using System.Windows;
 
 namespace Bank.Database
 {
-    class DataConnection
+    public class DataConnection
     {
-        protected string connectionString = ConfigurationManager.ConnectionStrings["BankDatabase"].ConnectionString;
+
+        public SqlConnectionStringBuilder SqlConnection()
+        {
+            try
+            {
+                SqlConnectionStringBuilder connectionString = new SqlConnectionStringBuilder();
+                connectionString.DataSource = "groseclose.database.windows.net";
+                connectionString.UserID = "BGroseclose";
+                connectionString.Password = "Hward777";
+                connectionString.InitialCatalog = "Bank";
+
+                return connectionString;
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show("Unable to connect to the Database.", "Database Connection");
+                Application.Current.Shutdown();
+            }
+
+            return null;
+        }
     }
+      
 }

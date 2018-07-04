@@ -49,7 +49,6 @@ namespace Bank.UI
         {
             CreateNewAccount createNewAccount = new CreateNewAccount();
             createNewAccount.Show();
-            this.Close();
         }
 
         private bool ValidateLogin()

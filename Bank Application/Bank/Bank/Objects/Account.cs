@@ -11,7 +11,6 @@ namespace Bank.Objects
         public int AccountPK { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
-        public int SocailSecurityNumber { get; set; }
         public double CheckingBalance { get; set; }
         public double SavingBalance { get; set; }
         public DateTime CreatedDate { get; set; }

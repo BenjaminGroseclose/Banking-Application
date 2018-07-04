@@ -8,7 +8,6 @@ D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\obj\De
 D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\obj\Debug\UI\CreateNewAccount.g.cs
 D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\obj\Debug\App.g.cs
 D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\obj\Debug\Bank_MarkupCompile.cache
-D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\obj\Debug\Bank_Content.g.cs
 D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\obj\Debug\UI\Login.baml
 D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\obj\Debug\UI\CreateNewAccount.baml
 D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\obj\Debug\Bank.g.resources
@@ -25,5 +24,4 @@ D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\obj\De
 D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\obj\Debug\Bank_MarkupCompile.lref
 D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\obj\Debug\UI\MainWindow.baml
 D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\obj\Debug\UI\Pages\SideNavPage.baml
-D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\bin\Debug\Database\DataSet\Bank.mdf
-D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\bin\Debug\Database\DataSet\Bank_log.ldf
+D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\obj\Debug\Bank.csprojAssemblyReference.cache
