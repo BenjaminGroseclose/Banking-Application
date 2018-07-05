@@ -34,7 +34,7 @@ namespace Bank.UI
             MainWindow mainWindow = new MainWindow();
             if(ValidateLogin())
             {
-                if (storedProcs.LoginAuth(txtUsername.Text, txtPassword.Password))
+                if (storedProcs.StoredProc_LoginAuth(txtUsername.Text, txtPassword.Password))
                 {
                     mainWindow.Show();
                     this.Close();

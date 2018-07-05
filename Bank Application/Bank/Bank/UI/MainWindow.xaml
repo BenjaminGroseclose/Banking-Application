@@ -5,16 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bank.UI"
         mc:Ignorable="d"
-        Title="Bank Application" Height="600" Width="800
-        ">
+        Title="Bank Application" Height="800" Width="1200">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="580*"/>
             <ColumnDefinition Width="13*"/>
         </Grid.ColumnDefinitions>
-        <TabItem Margin="0,0,625,0">
-            <Frame Source="Pages/SideNavPage.xaml" />
-        </TabItem>
+        <Frame Name="SideNav" Source="Pages/SideNavPage.xaml" />
     </Grid>
 
 </Window>

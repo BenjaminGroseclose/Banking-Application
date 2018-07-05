@@ -10,5 +10,6 @@ namespace Bank.Database
 {
     class ClientInfo : StoredProcs
     {
+
     }
 }

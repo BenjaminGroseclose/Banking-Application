@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using Bank.Database;
 using Bank.Objects;
 
 
@@ -22,9 +22,6 @@ namespace Bank.UI
     /// </summary>
     public partial class CreateNewAccount : Window
     {
-        private List<String> fields;
-        private string fieldString = "";
-
         public CreateNewAccount()
         {
             InitializeComponent();
@@ -34,77 +31,53 @@ namespace Bank.UI
         {
             Login login = new Login();
             login.Show();
-            this.Close();
+            Close();
         }
 
         private void SaveNewAccount(object sender, RoutedEventArgs e)
         {
+
             if (ValidateInput())
             {
-                if(MatchingPasswords())
-                {
-                    Customer customer = new Customer();
-                    Account account = new Account();
-                }
-                else
-                {
-                    MessageBox.Show("Incorrect Input", "Confirm Password does not match Password.");
-
-                }
-            }
-            else
-            {
-                foreach(var field in fields)
-                {
-                    ConcatFieldString(field);
-                }
-                MessageBox.Show("Incorrect Input", "Please Enter all the required fields" + fieldString);
 
             }
-        }
 
-        private void ConcatFieldString(string field)
-        {
-            switch(field)
-            {
-                case "txtFirstName":
-                    fieldString = string.Concat(fieldString, "/nFirst Name");
-                    break;
-                case "txtLastName":
-                    fieldString = string.Concat(fieldString, "/nLast Name");
-                    break;
-                case "txtPhone":
-                    fieldString = string.Concat(fieldString, "/nPhone");
-                    break;
-                case "dateDateOfBirth":
-                    fieldString = string.Concat(fieldString, "/nDate of Birth");
-                    break;
-                case "txtUsername":
-                    fieldString = string.Concat(fieldString, "/nUsername");
-                    break;
-                case "txtPassword":
-                    fieldString = string.Concat(fieldString, "/nPassword");
-                    break;
-                case "txtPasswordConfirm":
-                    fieldString = string.Concat(fieldString, "/nConfirm Password");
-                    break;
-            }
 
         }
 
         private bool ValidateInput()
-        {            
-            if (txtFirstName.Text == "") fields.Insert(0, "txtFirstName");
-            if (txtLastName.Text == "") fields.Insert(0, "txtLastName");
-            if (txtPhone.Text == "") fields.Insert(0, "txtPhone");
-            if (dateDateOfBirth.Text == "") fields.Insert(0, "dateDateOfBirth");
-            if (txtUsername.Text == "") fields.Insert(0, "txtUsername");
-            if (txtPassword.Text == "") fields.Insert(0, "txtPassword");
-            if (txtPasswordConfirm.Text == "") fields.Insert(0, "txtPasswordConfirm");
+        {
+            if(!NecessaryInfo())
+            {
+                MessageBox.Show("Please Enter all the required fields", "Incorrect Input");
+                return false;
+            }
 
-            if (fields.Any())
-                return true;
-            return false;
+            if (!MatchingPasswords())
+            {
+                MessageBox.Show("Confirm Password does not match Password.", "Incorrect Input");
+                return false;
+            }
+
+            if(!UniqueUsername())
+            {
+                MessageBox.Show("Username is already in use please try again.", "Incorrect Input");
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool NecessaryInfo()
+        {
+            if (txtFirstName.Text == "") return false;
+            if (txtLastName.Text == "") return false;
+            if (txtPhone.Text == "") return false;
+            if (dateDateOfBirth.Text == "") return false;
+            if (txtUsername.Text == "") return false;
+            if (txtPassword.Text == "") return false;
+            if (txtPasswordConfirm.Text == "") return false;
+            return true;
         }
 
         private bool MatchingPasswords()
@@ -114,18 +87,20 @@ namespace Bank.UI
             return false;
         }
 
-        private Customer NewCustomer()
+        private bool UniqueUsername()
         {
-            Customer customer = new Customer();
-
-            return customer;
+            StoredProcs storedProcs = new StoredProcs();
+            return storedProcs.StoredProc_UniqueUsername(txtUsername.Text);
         }
 
-        private Account NewAccount()
-        {
-            Account account = new Account();
+        //private bool NewCustomer()
+        //{
 
-            return account;
-        }
+        //}
+
+        //private bool NewAccount()
+        //{
+
+        //}
     }
 }

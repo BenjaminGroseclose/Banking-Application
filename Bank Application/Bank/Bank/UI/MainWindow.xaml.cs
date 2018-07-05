@@ -23,8 +23,6 @@ namespace Bank.UI
         public MainWindow()
         {
             InitializeComponent();
-            SideNavPage sideNav = new SideNavPage();
-            sideNav.Visibility = Visibility.Visible;
         }
     }
 }
