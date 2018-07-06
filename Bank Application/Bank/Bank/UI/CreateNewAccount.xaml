@@ -17,15 +17,19 @@
         <Label x:Name="lblPasswordConfirm" Content="Confirm" HorizontalAlignment="Left" Margin="274,109,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.276,-0.288"/>
         <Label x:Name="lblPassword" Content="Password" HorizontalAlignment="Left" Margin="274,81,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.276,-0.288"/>
         <TextBox x:Name="txtFirstName" HorizontalAlignment="Left" Height="23" Margin="102,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146"/>
-        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="23" Margin="102,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146"/>
         <TextBox x:Name="txtMiddle" HorizontalAlignment="Left" Height="23" Margin="102,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" Text="Optional"/>
+        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="23" Margin="102,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146"/>
         <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Height="23" Margin="102,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146"/>
-        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="23" Margin="337,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163"/>
-        <TextBox x:Name="txtPasswordConfirm" HorizontalAlignment="Left" Height="23" Margin="337,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163"/>
-        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="23" Margin="337,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163"/>
+        <ComboBox x:Name="comboGender" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="102,161,0,0" IsReadOnly="True">
+            <ComboBoxItem Content="Male"/>
+            <ComboBoxItem Content="Female"/>
+            <ComboBoxItem Content="N/A"/>
+        </ComboBox>
         <DatePicker x:Name="dateDateOfBirth" HorizontalAlignment="Left" Margin="101,188,0,0" VerticalAlignment="Top" Width="146"/>
+        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="23" Margin="337,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163"/>
+        <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Height="23" Margin="337,84,0,0" VerticalAlignment="Top" Width="163"/>
+        <PasswordBox x:Name="txtPasswordConfirm" HorizontalAlignment="Left" Height="23" Margin="337,112,0,0" VerticalAlignment="Top" Width="163"/>
         <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="337,161,0,0" Click="SaveNewAccount"/>
-        <ComboBox x:Name="comboGender" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Margin="102,161,0,0"/>
         <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="337,188,0,0" Click="CancelNewAccount"/>
     </Grid>
 </Window>

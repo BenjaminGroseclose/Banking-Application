@@ -41,7 +41,7 @@ namespace Bank.Database
                 retval.Direction = ParameterDirection.ReturnValue;
 
                 command.ExecuteNonQuery();
-                if ((int)retval.Value == 1)
+                if ((int)command.Parameters["Return Value"].Value == 1)
                     return true;
                 return false;
 

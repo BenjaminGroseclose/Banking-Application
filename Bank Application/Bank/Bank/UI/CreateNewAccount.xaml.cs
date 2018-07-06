@@ -37,15 +37,55 @@ namespace Bank.UI
         private void SaveNewAccount(object sender, RoutedEventArgs e)
         {
 
-            if (ValidateInput())
+            if (ValidInput())
             {
-
+                CreateNewClient();
             }
 
 
         }
 
-        private bool ValidateInput()
+        private void CreateNewClient()
+        {
+            Account account = CreateAccount();
+            Customer customer = CreateCustomer();
+
+
+        }
+
+        private Account CreateAccount()
+        {
+            Account account = new Account();
+
+            account.Username = txtUsername.Text;
+            account.Password = txtPassword.Password;
+            account.CreatedDate = DateTime.Today;
+
+            return account;
+        }
+
+
+        private Customer CreateCustomer()
+        {
+            Customer customer = new Customer();
+
+            customer.FirstName = txtFirstName.Text;
+            customer.LastName = txtLastName.Text;
+            customer.Phone = txtPhone.Text;
+            customer.DateOfBirth = Convert.ToDateTime(dateDateOfBirth.Text);
+            if (comboGender.Text == "Male")
+                customer.Gender = 'M';
+            else if (comboGender.Text == "Female")
+                customer.Gender = 'F';
+            else
+                customer.Gender = 'N';
+            customer.CreatedDate = DateTime.Today;
+
+
+            return customer;
+        }
+
+        private bool ValidInput()
         {
             if(!NecessaryInfo())
             {
@@ -73,10 +113,11 @@ namespace Bank.UI
             if (txtFirstName.Text == "") return false;
             if (txtLastName.Text == "") return false;
             if (txtPhone.Text == "") return false;
+            if (comboGender.Text == "") return false;
             if (dateDateOfBirth.Text == "") return false;
             if (txtUsername.Text == "") return false;
-            if (txtPassword.Text == "") return false;
-            if (txtPasswordConfirm.Text == "") return false;
+            if (txtPassword.Password == "") return false;
+            if (txtPasswordConfirm.Password == "") return false;
             return true;
         }
 
@@ -93,14 +134,6 @@ namespace Bank.UI
             return storedProcs.StoredProc_UniqueUsername(txtUsername.Text);
         }
 
-        //private bool NewCustomer()
-        //{
 
-        //}
-
-        //private bool NewAccount()
-        //{
-
-        //}
     }
 }
