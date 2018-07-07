@@ -23,7 +23,7 @@ namespace BankUnitTest.LoginTests
             string incorrectPassword = "67890";
 
             //Act
-            bool actual = storedProcs.LoginAuth(incorrectUsername, incorrectPassword);
+            bool actual = storedProcs.StoredProc_LoginAuth(incorrectUsername, incorrectPassword);
 
             //Assert
             Assert.IsFalse(actual);
@@ -38,7 +38,7 @@ namespace BankUnitTest.LoginTests
             string correctPassword = GetPassword(correctUsername);
 
             //Act
-            bool actual = storedProcs.LoginAuth(correctUsername, correctPassword);
+            bool actual = storedProcs.StoredProc_LoginAuth(correctUsername, correctPassword);
 
             //Assert
             Assert.IsTrue(actual);

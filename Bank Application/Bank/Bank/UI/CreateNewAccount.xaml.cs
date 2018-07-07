@@ -39,17 +39,24 @@ namespace Bank.UI
 
             if (ValidInput())
             {
-                CreateNewClient();
+                if(CreateNewClient())
+                {
+                    
+                }
             }
 
 
         }
 
-        private void CreateNewClient()
+        private bool CreateNewClient()
         {
+            StoredProcs procs = new StoredProcs();
             Account account = CreateAccount();
             Customer customer = CreateCustomer();
 
+            if (procs.CreateAccount(account) && procs.CreateCustomer(customer))
+                return true;
+            return false;
 
         }
 
@@ -67,18 +74,17 @@ namespace Bank.UI
 
         private Customer CreateCustomer()
         {
+            Dictionary<string, char> gender = new Dictionary<string, char>();
+            gender.Add("Male", 'M');
+            gender.Add("Female", 'F');
+            gender.Add("N/A", 'N');
             Customer customer = new Customer();
 
             customer.FirstName = txtFirstName.Text;
             customer.LastName = txtLastName.Text;
             customer.Phone = txtPhone.Text;
             customer.DateOfBirth = Convert.ToDateTime(dateDateOfBirth.Text);
-            if (comboGender.Text == "Male")
-                customer.Gender = 'M';
-            else if (comboGender.Text == "Female")
-                customer.Gender = 'F';
-            else
-                customer.Gender = 'N';
+            customer.Gender = gender[comboGender.Text];
             customer.CreatedDate = DateTime.Today;
 
 
@@ -123,7 +129,7 @@ namespace Bank.UI
 
         private bool MatchingPasswords()
         {
-            if (txtPassword.Text == txtPasswordConfirm.Text)
+            if (txtPassword.Password == txtPasswordConfirm.Password)
                 return true;
             return false;
         }

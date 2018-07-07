@@ -4,9 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-         Title="Create a New Account" Height="300
-        " Width="535.648">
-    <Grid Margin="0,0,2,-1">
+         Title="Create a New Account" Height="450" Width="535.648">
+    <Grid Margin="0,0,2,-108">
         <Label x:Name="lblFirstName" Content="First Name" HorizontalAlignment="Left" Margin="10,43,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.276,-0.288"/>
         <Label x:Name="lblMiddle" Content="Middle" HorizontalAlignment="Left" Margin="10,74,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.276,-0.288"/>
         <Label x:Name="lblLastName_Copy" Content="Last Name" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.276,-0.288"/>
@@ -31,5 +30,6 @@
         <PasswordBox x:Name="txtPasswordConfirm" HorizontalAlignment="Left" Height="23" Margin="337,112,0,0" VerticalAlignment="Top" Width="163"/>
         <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="337,161,0,0" Click="SaveNewAccount"/>
         <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="337,188,0,0" Click="CancelNewAccount"/>
+        <Frame Name="AccountBalances" Source="Pages/" />
     </Grid>
 </Window>

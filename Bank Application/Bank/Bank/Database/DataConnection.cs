@@ -21,7 +21,7 @@ namespace Bank.Database
             }
             catch (SqlException e)
             {
-                MessageBox.Show("Unable to connect to the Database.", "Database Connection");
+                MessageBox.Show("Unable to connect to the Database." + e.Errors, "Database Connection");
                 Application.Current.Shutdown();
             }
 
