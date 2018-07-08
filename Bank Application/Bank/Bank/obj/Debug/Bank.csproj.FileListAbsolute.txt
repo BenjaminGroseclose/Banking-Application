@@ -25,3 +25,25 @@ D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\obj\De
 D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\obj\Debug\UI\MainWindow.baml
 D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\obj\Debug\UI\Pages\SideNavPage.baml
 D:\Programming\C# Projects\Banking-Application\Bank Application\Bank\Bank\obj\Debug\Bank.csprojAssemblyReference.cache
+C:\Users\Haley\source\repos\Banking-Application\Bank Application\Bank\Bank\bin\Debug\Bank.exe.config
+C:\Users\Haley\source\repos\Banking-Application\Bank Application\Bank\Bank\bin\Debug\Bank.exe
+C:\Users\Haley\source\repos\Banking-Application\Bank Application\Bank\Bank\bin\Debug\Bank.pdb
+C:\Users\Haley\source\repos\Banking-Application\Bank Application\Bank\Bank\obj\Debug\UI\Login.baml
+C:\Users\Haley\source\repos\Banking-Application\Bank Application\Bank\Bank\obj\Debug\UI\CreateNewAccount.baml
+C:\Users\Haley\source\repos\Banking-Application\Bank Application\Bank\Bank\obj\Debug\UI\Login.g.cs
+C:\Users\Haley\source\repos\Banking-Application\Bank Application\Bank\Bank\obj\Debug\UI\CreateNewAccount.g.cs
+C:\Users\Haley\source\repos\Banking-Application\Bank Application\Bank\Bank\obj\Debug\UI\MainWindow.g.cs
+C:\Users\Haley\source\repos\Banking-Application\Bank Application\Bank\Bank\obj\Debug\UI\Pages\Balances.g.cs
+C:\Users\Haley\source\repos\Banking-Application\Bank Application\Bank\Bank\obj\Debug\UI\Pages\SideNavPage.g.cs
+C:\Users\Haley\source\repos\Banking-Application\Bank Application\Bank\Bank\obj\Debug\App.g.cs
+C:\Users\Haley\source\repos\Banking-Application\Bank Application\Bank\Bank\obj\Debug\Bank_MarkupCompile.cache
+C:\Users\Haley\source\repos\Banking-Application\Bank Application\Bank\Bank\obj\Debug\Bank_MarkupCompile.lref
+C:\Users\Haley\source\repos\Banking-Application\Bank Application\Bank\Bank\obj\Debug\UI\MainWindow.baml
+C:\Users\Haley\source\repos\Banking-Application\Bank Application\Bank\Bank\obj\Debug\UI\Pages\SideNavPage.baml
+C:\Users\Haley\source\repos\Banking-Application\Bank Application\Bank\Bank\obj\Debug\UI\Pages\Balances.baml
+C:\Users\Haley\source\repos\Banking-Application\Bank Application\Bank\Bank\obj\Debug\Bank.g.resources
+C:\Users\Haley\source\repos\Banking-Application\Bank Application\Bank\Bank\obj\Debug\Bank.Properties.Resources.resources
+C:\Users\Haley\source\repos\Banking-Application\Bank Application\Bank\Bank\obj\Debug\Bank.csproj.GenerateResource.cache
+C:\Users\Haley\source\repos\Banking-Application\Bank Application\Bank\Bank\obj\Debug\Bank.csproj.CoreCompileInputs.cache
+C:\Users\Haley\source\repos\Banking-Application\Bank Application\Bank\Bank\obj\Debug\Bank.exe
+C:\Users\Haley\source\repos\Banking-Application\Bank Application\Bank\Bank\obj\Debug\Bank.pdb

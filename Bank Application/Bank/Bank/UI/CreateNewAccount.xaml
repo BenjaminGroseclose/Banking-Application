@@ -30,6 +30,6 @@
         <PasswordBox x:Name="txtPasswordConfirm" HorizontalAlignment="Left" Height="23" Margin="337,112,0,0" VerticalAlignment="Top" Width="163"/>
         <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="337,161,0,0" Click="SaveNewAccount"/>
         <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="337,188,0,0" Click="CancelNewAccount"/>
-        <Frame Name="AccountBalances" Source="Pages/" />
+        <Frame Name="AccountBalances" Source="Pages/Balances.xaml" Margin="10,227,10,125" />
     </Grid>
 </Window>

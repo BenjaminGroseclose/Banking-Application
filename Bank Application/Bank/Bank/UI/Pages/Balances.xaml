@@ -5,10 +5,15 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Bank.UI.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="200" d:DesignWidth="400"
       Title="Balances">
 
     <Grid>
-        
+
+        <Expander  IsExpanded="True">
+            <Border BorderBrush="DarkGray" BorderThickness="2">
+                <Frame Name="BalanceInput" Source="Pages/BalanceInput.xaml"/>
+            </Border>
+        </Expander>
     </Grid>
 </Page>
