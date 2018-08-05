@@ -1,18 +1,20 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
-
+using System.Text;
 using Bank.Objects;
 
 namespace Bank.Database
 {
     public class StoredProcs : DataConnection
     {
+        StringBuilder errorMessages = new StringBuilder();
 
-        public bool StoredProc_LoginAuth(string username, string password)
+        public bool LoginAuth(string username, string password)
         {
             string _correctPassword;
             using (SqlConnection connection = new SqlConnection(SqlConnection().ToString()))
-            using (SqlCommand command = new SqlCommand("ValidateLogin" , connection))
+            using (SqlCommand command = new SqlCommand("ValidateLogin", connection))
+            try
             {
                 connection.Open();
                 command.CommandType = CommandType.StoredProcedure;
@@ -27,12 +29,26 @@ namespace Bank.Database
                 return false;
 
             }
+            catch (SqlException ex)
+            {
+                for (int i = 0; i < ex.Errors.Count; i++)
+                {
+                    errorMessages.Append("Index #" + i + "\n" +
+                        "Message: " + ex.Errors[i].Message + "\n" +
+                        "LineNumber: " + ex.Errors[i].LineNumber + "\n" +
+                        "Source: " + ex.Errors[i].Source + "\n" +
+                        "Procedure: " + ex.Errors[i].Procedure + "\n");
+                }
+                // Print Errors
+                return false;
+            }
         }
 
-        public bool StoredProc_UniqueUsername(string username)
+        public bool UniqueUsername(string username)
         {
             using (SqlConnection connection = new SqlConnection(SqlConnection().ToString()))
             using (SqlCommand command = new SqlCommand("UniqueUsername", connection))
+            try
             {
                 connection.Open();
                 command.CommandType = CommandType.StoredProcedure;
@@ -46,16 +62,86 @@ namespace Bank.Database
                 return false;
 
             }
+            catch(SqlException ex)
+            {
+                for (int i = 0; i < ex.Errors.Count; i++)
+                {
+                    errorMessages.Append("Index #" + i + "\n" +
+                        "Message: " + ex.Errors[i].Message + "\n" +
+                        "LineNumber: " + ex.Errors[i].LineNumber + "\n" +
+                        "Source: " + ex.Errors[i].Source + "\n" +
+                        "Procedure: " + ex.Errors[i].Procedure + "\n");
+                }
+                // Print Errors
+                return false;
+            }
         }
 
         internal bool CreateAccount(Account account)
         {
-            return false;
+
+            using (SqlConnection connection = new SqlConnection(SqlConnection().ToString()))
+            using (SqlCommand command = new SqlCommand("Account_Save", connection))
+            try
+            {
+                connection.Open();
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@Username", account.Username);
+                command.Parameters.AddWithValue("@Password", account.Password);
+                command.Parameters.AddWithValue("@TotalBalance", account.TotalBalance);
+                command.ExecuteNonQuery();
+
+                return true; // want to implement sql error handling later
+
+            }
+            catch(SqlException ex)
+            {
+                for (int i = 0; i < ex.Errors.Count; i++)
+                {
+                    errorMessages.Append("Index #" + i + "\n" +
+                        "Message: " + ex.Errors[i].Message + "\n" +
+                        "LineNumber: " + ex.Errors[i].LineNumber + "\n" +
+                        "Source: " + ex.Errors[i].Source + "\n" +
+                        "Procedure: " + ex.Errors[i].Procedure + "\n");
+                }
+                // Print Errors
+                return false;
+            }
         }
 
-        internal bool CreateCustomer(Customer customer)
+        internal bool CreateCustomer(Customer customer, string username)
         {
-            return false;
+            using (SqlConnection connection = new SqlConnection(SqlConnection().ToString()))
+            using (SqlCommand command = new SqlCommand("Customer_Save", connection))
+            try
+            {
+                connection.Open();
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@FirstName", customer.FirstName);
+                command.Parameters.AddWithValue("@Middle", customer.Middle);
+                command.Parameters.AddWithValue("@LastName", customer.LastName);
+                command.Parameters.AddWithValue("@Gender", customer.Gender);
+                command.Parameters.AddWithValue("@DateOfBirth", customer.DateOfBirth);
+                command.Parameters.AddWithValue("@Phone", customer.Phone);
+                command.Parameters.AddWithValue("@Username", username);
+                command.ExecuteNonQuery();
+
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                for (int i = 0; i < ex.Errors.Count; i++)
+                {
+                    errorMessages.Append("Index #" + i + "\n" +
+                        "Message: " + ex.Errors[i].Message + "\n" +
+                        "LineNumber: " + ex.Errors[i].LineNumber + "\n" +
+                        "Source: " + ex.Errors[i].Source + "\n" +
+                        "Procedure: " + ex.Errors[i].Procedure + "\n");
+                }
+                // Print Errors
+                return false;
+            }
         }
+
     }
 }

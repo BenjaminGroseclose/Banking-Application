@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bank.Objects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,37 @@ namespace Bank.UI.Pages
     /// </summary>
     public partial class SideNavPage : Page
     {
+        public string _firstName;
+        public string FirstName
+        {
+            get { return _firstName; }
+            set { _firstName = value; }
+        }
+
+        public string _lastName;
+        public string LastName
+        {
+            get { return _lastName; }
+            set { _firstName = value; }
+        }
+
+        public string _totalAmount;
+        public string TotalAmount
+        {
+            get { return _totalAmount; }
+            set { _totalAmount = value; }
+        }
+
         public SideNavPage()
         {
             InitializeComponent();
+
         }
+
+        public SideNavPage(string username)
+        {
+
+        }
+
     }
 }

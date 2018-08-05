@@ -9,7 +9,18 @@
       Title="SideNavPage">
 
     <Grid>
-        <Rectangle Fill="#DDD3D3D4" HorizontalAlignment="Left" Height="800" Stroke="Black" VerticalAlignment="Top" Width="220"/>
-
+        <StackPanel Orientation="Vertical" Background="LightGray">
+            <DockPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="{Binding Path = FirstName}" Margin="5" x:Name="lblCustomerFirstName" />
+                    <Label Content="{Binding Path = LastName}" Margin="5" x:Name="lblCustomerLastName" />
+                    <Label Content="{Binding Path = TotalAmount}" Margin="0,5,5,5" x:Name="lblAccountTotalAmount" />
+                </StackPanel>
+                
+            </DockPanel>
+            <DockPanel>
+                
+            </DockPanel>
+        </StackPanel>
     </Grid>
 </Page>

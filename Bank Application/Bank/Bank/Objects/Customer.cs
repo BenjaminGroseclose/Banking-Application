@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Bank.Objects
 {
-    class Customer
+    public class Customer
     {
 
         public int CustomerPK { get; set; }
@@ -20,13 +20,6 @@ namespace Bank.Objects
         public string Phone { get; set; }
         public int AccountFK { get; set; }
         public DateTime CreatedDate { get; set; }
-
-        public Customer GetCustomerData(int CustomerPK)
-        {
-            var customer = new Customer();
-
-            return customer;
-        }
 
     }
 }

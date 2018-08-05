@@ -41,7 +41,9 @@ namespace Bank.UI
             {
                 if(CreateNewClient())
                 {
-                    
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.Show();
+                    Close();
                 }
             }
 
@@ -54,7 +56,7 @@ namespace Bank.UI
             Account account = CreateAccount();
             Customer customer = CreateCustomer();
 
-            if (procs.CreateAccount(account) && procs.CreateCustomer(customer))
+            if (procs.CreateAccount(account) && procs.CreateCustomer(customer, account.Username))
                 return true;
             return false;
 
@@ -137,7 +139,7 @@ namespace Bank.UI
         private bool UniqueUsername()
         {
             StoredProcs storedProcs = new StoredProcs();
-            return storedProcs.StoredProc_UniqueUsername(txtUsername.Text);
+            return storedProcs.UniqueUsername(txtUsername.Text);
         }
 
 

@@ -81,12 +81,10 @@
     <Compile Include="UI\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\Pages\Balances.xaml.cs">
-      <DependentUpon>Balances.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UI\Pages\SideNavPage.xaml.cs">
       <DependentUpon>SideNavPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\ViewModels\SideNavPageViewModel.cs" />
     <Page Include="UI\Login.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -104,10 +102,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UI\MainWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UI\Pages\Balances.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -154,5 +148,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
